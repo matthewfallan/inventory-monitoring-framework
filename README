@@ -1,0 +1,38 @@
+THE INVENTORY AND MONITORING FRAMEWORK
+
+AUTHORS
+
+Didem Ikis 1
+Matthew Allan 1, 2
+John Barczynski 1
+
+1 Department of Biology, Pennsylvania State University, University Park PA 16802
+2 Computational and Systems Biology Initiative, Massachusetts Institute of Technology, Cambridge MA 02139
+
+
+USERS
+
+Superuser
+A superuser has permission to create, edit, and delete SurveyCreators.
+
+SurveyCreator
+A SurveyCreator has permission to create, edit, and delete an Evaluator; to create, edit, and delete a Survey; to assign a Survey to an Evaluator created by the SurveyCreator; and to view the responses of Surveys created by the SurveyCreator.
+
+Evaluator
+An Evaluator has permission to take a Survey assigned to the Evaluator.
+
+
+PAGES
+
+Admin site (ROOT_URL/admin)
+A superuser can log on to the admin site, with which superusers can create, edit, and delete any other user, as well as assign or revoke permissions for users. A superuser should NOT give any SurveyCreator or Evaluator 'Staff status' or 'Superuser status,' either of which would enable these users to hack into the admin site and potentially compromise the data.
+
+Home page (ROOT_URL or ROOT_URL/eval)
+The home page of the Evaluation application. Evaluators can see lists of surveys they have been assigned, are working on, and have submitted. SurveyCreators can see lists of surveys they have created and the status of each survey; lists of Evaluators in their groups; and options to create, edit, or delete surveys and Evaluators.
+
+
+SETUP
+
+A superuser must create two groups named 'SurveyCreators' and 'Evaluators' before creating any SurveyCreators or Evaluators. To create a group, a superuser must log on to the admin site, find the menu 'Authentication and Authorization,' click the '+ Add' button to the right of 'Groups,' and enter the group name and permissions. The groups must be named 'SurveyCreators' and 'Evaluators' (no alternate spellings). A superuser should assign exactly the following permissions to each group:
+SurveyCreators: #FIXME
+Evaluators: #FIXME

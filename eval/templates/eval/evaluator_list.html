@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Evaluators</h1>
+  
+    {% if perms.eval.add_evaluator %}
+      <a href="{% url "create-evaluator" %}">Create Evaluator</a>
+    {% endif %}
+    
+    {% if object_list %}
+      <ul>
+        {% for evaluator in object_list %}
+          <li><a href="{{ evaluator.get_absolute_url }}">{{ evaluator.get_full_name }}</a> ({{ evaluator.email }})</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>There are no Evaluators in your group.</p>
+    {% endif %}
+
+{% endblock %}

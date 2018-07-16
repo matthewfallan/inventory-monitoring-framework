@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+  {% if perms.view_evaluator %}
+    <h2><a href={% url 'evaluators' %}>Evaluators</a></h2>
+  {% endif %}
+  
+  <h2>Surveys</h2>
+    <a href={% url 'surveys' %}>Click to view the Surveys in your groups.</a>
+{% endblock %}
