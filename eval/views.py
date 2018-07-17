@@ -46,8 +46,9 @@ class EvaluatorCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateVie
     permission_required = ('eval.add_evaluator',)
     # Location of the template (required).
     template_name = 'eval/evaluator_form.html'
-    # Redirect to the Evaluators list after creating the Evaluator.
-    success_url = 'evaluators'
+    # Redirect to the dashboard after creating the Evaluator.
+    #FIXME: redirect to evaluator list page.
+    success_url = '/'
 
     def get_form(self):
         # Mimics django.views.generic.edit.FormMixin.get_form.

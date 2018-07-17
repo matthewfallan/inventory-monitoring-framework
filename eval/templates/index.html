@@ -3,7 +3,7 @@
 {% block content %}
 <h1>Dashboard</h1>
 
-  {% if perms.view_evaluator %}
+  {% if perms.eval.view_evaluator %}
     <h2><a href={% url 'evaluators' %}>Evaluators</a></h2>
   {% endif %}
   
